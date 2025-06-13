@@ -1,7 +1,7 @@
 import IconButton from '@/components/IconButton'
-import { Calendar, Home, Inbox, PersonStanding, Search, Settings } from 'lucide-react'
+import { BookA, Calendar, Home, Inbox, PersonStanding, Presentation, Search, Settings, Text } from 'lucide-react'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 const items = [
   {
     title: "Home",
@@ -15,32 +15,45 @@ const items = [
   },
   {
     title: "Teachers",
-    url: "#",
-    icon: Calendar,
+    url: "/teachers",
+    icon: Presentation,
   },
   {
     title: "Courses",
-    url: "#",
-    icon: Search,
+    url: "/courses",
+    icon: BookA,
   },
   {
     title: "Grades",
-    url: "#",
-    icon: Settings,
+    url: "/grades",
+    icon: Text,
   },
 ]
 
+
+
 function Sidebar() {
   return (
-    <div >
-        {items.map( item => (
-            <Link to={item.url} key={item.title} >
-                <IconButton  title={item.title} icon={item.icon} className='data-[state=active]:bg-yellow-400'/>
-            </Link>
-        ) )}
-       {/* <IconButton title='Setting' icon={Settings} url={''} /> */}
+    <div>
+      {items.map((item) => (
+        <NavLink
+          to={item.url}
+          key={item.title}
+          // className={({ isActive }) => ""} 
+        >
+          {({ isActive }) => (
+            <IconButton
+              title={item.title}
+              icon={item.icon}
+              className={isActive ? "bg-gray-200 px-4 rounded-sm w-full ": "bg-gray-400 px-4"}
+              buttonStyle={isActive ? "font-semibold text-gray-600":"font-semibold text-black/80"}
+            />
+          )}
+        </NavLink>
+      ))}
     </div>
-  )
+  );
 }
+
 
 export default Sidebar
