@@ -50,30 +50,30 @@ export const topAchievers = [
 
 const TopAchievers = () => {
   return (
-    
 
-<div className=' grid sm:grid-cols-3 grid-cols-2 md:grid-cols-5  items-center'>
-    
 
-    {topAchievers.map(student => (
-  <div key={student.id} className="bg-white border rounded-lg shadow p-4 flex flex-col items-center gap-4 w-40 mb-2">
-    <img
-      src={student.profileImage}
-      alt={student.name}
-      className="w-16 h-16  object-cover "
-    />
-    <div className='flex flex-col'>
-      <h3 className="text-lg font-semibold text-gray-800">{student.name}</h3>
-      <p className="text-sm text-gray-500">Class: {student.class}</p>
-      <p className="text-sm text-gray-500">Score: {student.percentage}%</p>
-      <span className="inline-block mt-1 px-2 py-1 text-xs bg-yellow-100 text-yellow-700 rounded">
-        Rank #{student.rank}
-      </span>
+    <div className=' grid sm:grid-cols-3 grid-cols-2 md:grid-cols-5  items-center'>
+
+
+      {topAchievers.map(student => (
+        <div key={student.id} className="bg-white border rounded-lg shadow p-4 flex flex-col items-center gap-4 w-40 mb-2">
+          <img
+            src={student.profileImage}
+            alt={student.name}
+            className="w-16 h-16  object-cover "
+          />
+          <div className='flex flex-col'>
+            <h3 className="text-lg font-semibold text-gray-800">{student.name}</h3>
+            <p className="text-sm text-gray-500">Class: {student.class}</p>
+            <p className="text-sm text-gray-500">Score: {student.percentage}%</p>
+            <span className="inline-block mt-1 px-2 py-1 text-xs bg-yellow-100 text-yellow-700 rounded">
+              Rank #{student.rank}
+            </span>
+          </div>
+        </div>
+      ))}
+
     </div>
-  </div>
-))}
-
-</div>
 
   )
 }

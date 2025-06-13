@@ -4,12 +4,12 @@ import { Button } from '@/components/ui/button'
 import React, { useMemo, useState } from 'react'
 
 interface Teacher {
-    name: string,
-    subject: string,
-    address: string
+  name: string,
+  subject: string,
+  address: string
 }
 
-const teachers:Teacher[] = [
+const teachers: Teacher[] = [
   {
     name: "Dr. Linda Carter",
     subject: "Mathematics",
@@ -115,20 +115,20 @@ const teachers:Teacher[] = [
 
 function Teachers() {
   const [searchTerm, setSearchTerm] = useState<string>('');
-  
-  const filterTeacher = useMemo(()=> {
-    if(!searchTerm){
+
+  const filterTeacher = useMemo(() => {
+    if (!searchTerm) {
       return teachers
     }
-    
+
     const lowercaseSearchTerm = searchTerm.toLowerCase();
     return teachers.filter(
       (teacher) =>
         teacher.name.toLowerCase().includes(lowercaseSearchTerm) ||
-      teacher.subject.toLowerCase().includes(lowercaseSearchTerm) ||
-      teacher.address.toLowerCase().includes(lowercaseSearchTerm)
+        teacher.subject.toLowerCase().includes(lowercaseSearchTerm) ||
+        teacher.address.toLowerCase().includes(lowercaseSearchTerm)
     );
-  },[searchTerm])
+  }, [searchTerm])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value)
@@ -142,7 +142,7 @@ function Teachers() {
           <SearchBox placeholder="search teachers" value={searchTerm} onChange={handleChange} />
         </div>
       </div>
-      <TeacherTable teachers={filterTeacher}/>
+      <TeacherTable teachers={filterTeacher} />
     </div>
   )
 }

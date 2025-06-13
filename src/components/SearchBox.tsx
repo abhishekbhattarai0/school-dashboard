@@ -15,7 +15,6 @@ function SearchBox({
 }) {
   return (
     <div className='relative flex items-center sm:w-full '>
-      {/* Added pr-10 to create space for the icon */}
       <input
         placeholder={placeholder}
         className={` px-2 py-1 rounded-xl border sm:w-full ${className}`}

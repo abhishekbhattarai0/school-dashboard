@@ -1,14 +1,14 @@
 import { CourseTable } from '@/components/CourseTable'
 import SearchBox from '@/components/SearchBox'
 import { Button } from '@/components/ui/button'
-import React, {  useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 interface Course {
   name: string;
   code: string;
   description: string;
 }
 
-const courses:Course[] = [
+const courses: Course[] = [
   {
     name: "Introduction to Computer Science",
     code: "CS101",
@@ -65,7 +65,7 @@ function Courses() {
   const [searchTerm, setsearchTerm] = useState<string>('');
 
   const filterCourse = useMemo(() => {
-    if(!searchTerm){
+    if (!searchTerm) {
       console.log('first')
       return courses;
     }
@@ -78,13 +78,13 @@ function Courses() {
         course.code.toLowerCase().includes(lowerSearchTerm) ||
         course.description.toLowerCase().includes(lowerSearchTerm)
     );
-  },[searchTerm])
+  }, [searchTerm])
 
-    
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setsearchTerm(e.target.value)
-    
+
   }
   return (
     <div>

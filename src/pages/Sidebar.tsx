@@ -1,14 +1,14 @@
 import IconButton from '@/components/IconButton'
-import { BookA,  Home, PersonStanding, Presentation,  Text } from 'lucide-react'
+import { BookA, Home, PersonStanding, Presentation, Text } from 'lucide-react'
 import React from 'react'
-import {  NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 interface Item {
-  title:string
+  title: string
   url: string,
-  icon:   React.ComponentType<React.SVGProps<SVGSVGElement>>
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
 }
-const items:Item[] = [
+const items: Item[] = [
   {
     title: "Home",
     url: "/home",
@@ -41,18 +41,18 @@ const items:Item[] = [
 function Sidebar() {
   return (
     <div>
-      {items.map((item:Item) => (
+      {items.map((item: Item) => (
         <NavLink
           to={item.url}
           key={item.title}
-          // className={({ isActive }) => ""} 
+        // className={({ isActive }) => ""} 
         >
           {({ isActive }) => (
             <IconButton
               title={item.title}
               icon={item.icon}
-              className={isActive ? "bg-gray-200 px-4 rounded-sm w-full ": "bg-gray-400 px-4"}
-              buttonStyle={isActive ? "font-semibold text-gray-600":"font-semibold text-black/80"}
+              className={isActive ? "bg-gray-200 px-4 rounded-sm w-full " : "bg-gray-400 px-4"}
+              buttonStyle={isActive ? "font-semibold text-gray-600" : "font-semibold text-black/80"}
             />
           )}
         </NavLink>

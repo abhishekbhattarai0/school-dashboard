@@ -8,7 +8,7 @@ type CardContent = {
   value: number | string
 }
 
-const cardData:CardContent[] = [
+const cardData: CardContent[] = [
   { title: "Total Students", value: 1240 },
   { title: "Teachers", value: 78 },
   { title: "Classes", value: 32 },
@@ -26,13 +26,13 @@ const Home = () => {
       </div>
       {/* Events card */}
       <div className='my-4'>
-        <EventCard/>
+        <EventCard />
       </div>
       <div>
         <h1 className='text-2xl font-semibold mt-4 text-gray-700 mb-4'>Top 5 Achievers</h1>
-        <TopAchievers/>
+        <TopAchievers />
       </div>
-      <RecentActivities/>
+      <RecentActivities />
 
 
     </div>

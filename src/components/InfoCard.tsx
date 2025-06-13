@@ -3,13 +3,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 interface InfoCardProps {
   title: string
   value: string | number
- 
+
 }
 
 export function InfoCard({
   title,
   value,
- 
+
 }: InfoCardProps) {
   return (
     <Card className="bg-muted text-gray-900">

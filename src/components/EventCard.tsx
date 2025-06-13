@@ -1,4 +1,3 @@
-
 type noticeProps = {
     id: number;
     title: string;
