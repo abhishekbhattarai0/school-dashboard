@@ -11,7 +11,7 @@ interface Item {
 const items: Item[] = [
   {
     title: "Home",
-    url: "/home",
+    url: "/",
     icon: Home,
   },
   {
