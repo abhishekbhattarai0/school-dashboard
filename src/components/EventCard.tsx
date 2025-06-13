@@ -44,7 +44,7 @@ function EventCard() {
         <div >
             <h1 className='text-2xl font-semibold mt-4 text-gray-700'>Events and Notices</h1>
             {notices.map(notice => (
-                <div className="bg-white border rounded-lg shadow p-4 my-2">
+                <div key={notice.id} className="bg-white border rounded-lg shadow p-4 my-2">
                     <h3 className="text-lg font-semibold text-blue-700">{notice.title}</h3>
                     <p className="text-sm text-gray-600">📍 {notice.location}</p>
                     <p className="text-sm text-gray-600">🗓️ {notice.date} - {notice.location}</p>
