@@ -27,7 +27,7 @@ export default function SignIn() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen min-w-screen bg-gray-100">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="bg-white p-6 rounded-xl shadow-md w-full max-w-sm space-y-4"
@@ -38,7 +38,7 @@ export default function SignIn() {
           <label className="block text-sm font-medium">Email</label>
           <Input
             {...register("email")}
-            className="mt-1 w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+            className="mt-1 w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-yellow-300"
           />
           {errors.email && (
             <p className="text-sm text-red-500 mt-1">{errors.email.message}</p>
