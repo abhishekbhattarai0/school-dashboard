@@ -1,15 +1,29 @@
-import { Input } from './ui/input'
+
+import type React from 'react'
 import { SearchIcon } from 'lucide-react'
 
-function SearchBox({placeholder="search....",className=""}:{
-    placeholder?:string,
-    className?:string
+function SearchBox({
+  placeholder = 'search....',
+  className = '',
+  value,
+  onChange,
+}: {
+  placeholder?: string
+  className?: string
+  value: string
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }) {
   return (
-   <div className='relative flex items-center w-full'>
-     <SearchIcon className='absolute right-4 text-gray-700'/>
-   <Input placeholder={placeholder} className={` ${className}`} />
-   </div>
+    <div className='relative flex items-center sm:w-full '>
+      {/* Added pr-10 to create space for the icon */}
+      <input
+        placeholder={placeholder}
+        className={` px-2 py-1 rounded-xl border sm:w-full ${className}`}
+        value={value}
+        onChange={onChange}
+      />
+      <SearchIcon className='absolute right-4 text-gray-700 sm:flex hidden ' />
+    </div>
   )
 }
 

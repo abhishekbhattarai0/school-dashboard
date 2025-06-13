@@ -1,8 +1,14 @@
 import IconButton from '@/components/IconButton'
-import { BookA, Calendar, Home, Inbox, PersonStanding, Presentation, Search, Settings, Text } from 'lucide-react'
+import { BookA,  Home, PersonStanding, Presentation,  Text } from 'lucide-react'
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
-const items = [
+import {  NavLink } from 'react-router-dom'
+
+interface Item {
+  title:string
+  url: string,
+  icon:   React.ComponentType<React.SVGProps<SVGSVGElement>>
+}
+const items:Item[] = [
   {
     title: "Home",
     url: "/home",
@@ -35,7 +41,7 @@ const items = [
 function Sidebar() {
   return (
     <div>
-      {items.map((item) => (
+      {items.map((item:Item) => (
         <NavLink
           to={item.url}
           key={item.title}

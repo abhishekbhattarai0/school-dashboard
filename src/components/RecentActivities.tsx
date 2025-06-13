@@ -44,7 +44,7 @@ const RecentActivities = () => {
                     <CardDescription>Latest updates and activities</CardDescription>
                 </CardHeader>
                 <CardContent>
-                    {recentActivitiesData.map(activity => (
+                    {recentActivitiesData.map((activity:ActivitiesProps) => (
                         <div key={activity.title} className='flex flex-col  items-around border rounded-2xl py-2 px-4 gap-4 mb-2' >
 
                        <div className='flex justify-between ml-4 w-full pr-2 '>

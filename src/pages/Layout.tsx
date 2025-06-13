@@ -10,13 +10,16 @@ export default function Layout () {
         <div className='flex flex-col h-screen overflow-hidden'>
             {/* Top Nav */}
             <div className='flex justify-between h-16 px-2 items-center bg-gray-400 shrink-0'>
-                {/** use appropriate icon */}
                 <div className='flex flex-row gap-4 ml-2'>
                     <MenuIcon className='sm:hidden' onClick={()=> setShowSidebar(prev => !prev)}/>
                 <p className='md:text-2xl font-bold'>School</p>
                 </div>
-                <div>
-                    <SearchBox className='bg-white' />
+                <div className=''>
+                    <input 
+                        placeholder='search'
+                        className='bg-white px-2 py-1.5 rounded-full sm:w-full w-[200px] '
+                    />
+
                 </div>
             </div>
 
