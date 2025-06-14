@@ -1,6 +1,5 @@
 import EventCard from '@/components/EventCard';
 import { InfoCard } from '@/components/InfoCard'
-import LineChartGraph from '@/components/LineChart';
 import RecentActivities from '@/components/RecentActivities';
 import TopAchievers from '@/components/TopAchievers';
 
@@ -35,10 +34,7 @@ const Home = () => {
       </div>
       <RecentActivities />
 
-      <div className='mt-4'>
-        <h1 className='text-2xl font-semibold mt-4 text-gray-700 mb-4'>Attendence</h1>
-        <LineChartGraph />
-      </div>
+      
 
 
     </div>
