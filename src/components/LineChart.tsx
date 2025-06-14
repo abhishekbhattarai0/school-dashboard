@@ -1,14 +1,21 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Card, CardContent } from './ui/card';
 
+interface Data {
+  course: string
+  present: number
+  absent: number
+  total: number
+}
+
 // Example data for the chart
-const data = [
-  { course: 'Math 101', present: 85, absent:15, total: 100 },
-  { course: 'Physics 201', present: 78,absent:5, total: 95 },
-  { course: 'Chemistry 102', present: 92, absent:8,total: 100 },
-  { course: 'Biology 210', present: 74, absent:16, total: 90 },
-  { course: 'History 101', present: 88, absent:10,total: 98 },
-  { course: 'English Lit', present: 95,absent:10, total: 100 },
+const data:Data[] = [
+  { course: 'Math', present: 85, absent:15, total: 100 },
+  { course: 'Physics', present: 78,absent:5, total: 95 },
+  { course: 'Chemistry', present: 92, absent:8,total: 100 },
+  { course: 'Biology', present: 74, absent:16, total: 90 },
+  { course: 'History', present: 88, absent:10,total: 98 },
+  { course: 'English', present: 95,absent:10, total: 100 },
   { course: 'Computer Sci', present: 90,absent:10, total: 100 },
 ];
 
