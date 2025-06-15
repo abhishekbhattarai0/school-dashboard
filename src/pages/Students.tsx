@@ -2,6 +2,7 @@ import SearchBox from '@/components/SearchBox'
 import StudentTable from '@/components/StudentTable'
 import { Button } from '@/components/ui/button'
 import { useMemo, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 interface Student {
   name: string,
@@ -113,6 +114,7 @@ const students: Student[] = [
 
 function Students() {
   const [searchTerm, setSearchTerm] = useState<string>('')
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value)
@@ -134,7 +136,7 @@ function Students() {
   return (
     <div>
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-8">
-        <Button variant={'outline'}>Add Student</Button>
+        <Button variant={'outline'} onClick={()=>navigate("/students/add-student/student-personal")}>Add Student</Button>
         <div className="w-full sm:w-auto">
           <SearchBox placeholder="search students" value={searchTerm} onChange={handleChange} />
         </div>
