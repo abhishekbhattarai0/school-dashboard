@@ -12,6 +12,7 @@ import { StudentAcademicDetails } from './pages/addStudentPage/StudentAcademicDe
 import { StudentPersonalDetails } from './pages/addStudentPage/StudentPersonalDetails'
 import { StudentContactDetails } from './pages/addStudentPage/StudentContactDetails'
 import { StudentGaurdianDetails } from './pages/addStudentPage/StudentGaurdianDetails'
+import PageNotFound from './pages/PageNotFound'
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
             <Route path="/students/add-student/student-academic" element={<StudentAcademicDetails />} />
 
           </Route>
+          <Route path="*" element={<PageNotFound />} />
 
 
         </Route>
